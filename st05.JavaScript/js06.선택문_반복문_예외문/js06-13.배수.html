@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        (i%5==0) && (i%7!=0) //5의 배수이고 7의 배수가아니면
+        (i%7==0) && (i%5!=0)//7의 배수이고 5의 배수가 아니면
+        (i%5==0) && (i%7==0)//5의 배수이고 7의 배수이면
+
+        for (
+            var i=0;
+             i<=100;
+              i=i+1
+              ) {
+
+                if ((i%5==0) && (i%7!=0)) {
+                    console.log('★'); 
+                }
+                else if ((i%7==0) && (i%5!=0)) {
+                    console.log('♠');
+                }
+                else if ((i%5==0) && (i%7==0)) {
+                    console.log('☎');
+                }
+                else {
+
+                }
+            }
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
