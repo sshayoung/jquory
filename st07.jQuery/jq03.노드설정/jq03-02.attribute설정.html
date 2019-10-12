@@ -78,4 +78,101 @@
 
 <!-- 임포트 -->
 
-
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+
+    $('#attr_read').on('click',function(){
+
+        var img1=$('#img1').attr('src');
+        $('#result_attr').html(img1);
+    })
+
+    $('#attr_create').on('click',function(){
+
+        $('#img2').attr('src','images/im2.jpg');
+    })
+
+    $('#attr_update').on('click',function(){
+
+        $('#img2').attr('src','images/im3.jpg');
+    })
+
+    $('#attr_delete').on('click',function(){
+
+        $('#img2').removeAttr('src');
+    })
+
+    
+    $('#style_read').on('click',function(){
+
+        $('#style').css('border');
+        var style1=$('#style').css('border');
+        $('#result_style').html(style1);
+    })
+
+    $('#style_create').on('click',function(){
+
+        $('#style').css('border','2px solid rgb(0,0,255)');
+        var style2=$('#style').css('border');
+        $('#result_style').html(style2);
+    })
+
+    $('#style_update').on('click',function(){
+
+        $('#style').css('border','2px dashed rgb(0,0,255)');
+        var style3=$('#style').css('border');
+        $('#result_style').html(style3);
+    })
+
+    $('#style_delete').on('click',function(){
+
+        $('#style').css('border','');
+        var style4=$('#style').css('border');
+        $('#result_style').html(style4);
+    })
+
+
+    $('#class_read').on('click',function(){
+
+        var class1= $('#class').hasClass('white');
+        var class1=$('#class').attr('class');
+        $('#result_class').html(class1);
+    })
+
+    $('#class_create').on('click',function(){
+
+        var class2=$('#class').addClass('red');
+        var class2=$('#class').attr('class2');
+        $('#result_class').html(class2);
+    })
+
+    $('#class_update').on('click',function(){
+
+        var class3=$('#class').removeClass('red');
+        var class3=$('#class').addClass('yellow');
+        var class3=$('#class').attr('class3');
+        $('#result_class').html(class3);
+    })
+
+    $('#class_delete_part').on('click',function(){
+
+        var class4=$('#class').removeClass('white');
+        var class4=$('#class').attr('class4');
+        $('#result_class').html(class4);
+    })
+
+    $('#class_delete_all').on('click',function(){
+
+        var class5=$('#class').removeClass();
+        var class5=$('#class').attr('class5');
+        $('#result_class').html(class5);
+    })
+
+    $('p.yellow').toggleClass('click',function(){
+
+        $('p.yellow').hasClass('red');
+    })
+
+</script>
+

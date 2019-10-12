@@ -47,4 +47,36 @@
 
 <!-- 임포트 -->
 
-
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+
+    $('#element_read').on('click', function(){
+
+        
+        var tag  = $('p.pclick').html();
+        
+        alert(tag);
+    })
+
+
+    $('#element_create').on('click', function(){
+        
+        // <img src="./images/im1.jpg">
+        $('div#result_element').html('<img src="./images/im1.jpg">')
+    })
+
+    $('#element_update').on('click', function(){
+        
+        var tag  = $('p.pclick').html();
+        $('div#result_element').html(tag)
+    })
+
+    $('#element_delete').on('click', function(){
+        
+        $('div#result_element').empty();
+    })
+
+
+
+</script>

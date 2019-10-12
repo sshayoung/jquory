@@ -29,5 +29,46 @@
 </body>
 </html>
 
-<!-- ����Ʈ -->
-
+
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+
+	$('#has').on('click' , function(){
+
+		$('a[target=_blank]').css('background-color','gray');
+	})  
+
+	$('#equal').on('click' , function(){
+
+		$('a[href="http://slqer.com"]').css('background-color','gray');
+	})
+
+	$('#notequal').on('click', function(){
+
+		$('a[href!="http://slqer.com"]' ).css('background-color','gray');
+	})
+
+	$('#startwith').on('click', function(){
+
+		$('a[href^="http://ho"]').css('background-color','gray');
+	})
+
+	$('#endwith').on('click', function(){
+
+		$('a[href$=".net"]').css('background-color','gray');
+	})
+
+	$('#contains').on('click', function(){
+
+	$('a[href*=hoons]').css('background-color','gray');
+	})
+
+	$('#findword').on('click', function(){
+
+	$('a[name*=man]').css('background-color','gray');
+	})
+
+
+</script>
+

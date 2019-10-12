@@ -3,7 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>객체 생성</title>
-    
+    <script>
+        
+        var foo = {
+            name : 'foo',
+            age : 30,
+            array : [1,2,3] ,
+            run : function() {
+                return this.name;
+            },
+        }
+        
+        //Read
+        console.log (foo.name);
+        console.log (foo['name']);
+
+        //Creat
+        foo.gender = 'man';
+        foo.nickname = 'babo';
+        console.log(foo.gender);
+        console.log(foo.nickname);
+
+        //Update
+        foo.name = 'bar';
+        foo.age = 50;
+        console.log (foo.name);
+        console.log(foo.age);
+
+        //Delete
+        delete foo.gender;
+        delete foo.nickname;
+        console.log(foo.gender); //==>undefind
+        console.log(foo.nickname); //==>undefind
+
+        //객체의 프로퍼티 열거 : for ~ in 사용해야 한다.
+        //객체를 for문에서 사용할때 대괄호 표기법을 사용해야 한다.
+        for(var name in foo) {
+            console.log(foo[name]);
+        }
+
+    </script>
 </head>
 <body>
 

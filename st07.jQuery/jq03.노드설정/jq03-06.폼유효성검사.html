@@ -41,4 +41,54 @@
 
 <!-- 임포트 -->
 
-
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+$('#regBtn').on('click', function() {
+    //아이디 유형성 검사
+    var result=$('#userId').val(); // val속성 값 읽기
+    if (result=='') {
+        //<laber name="userId">아이디를 입력하세요</laber>
+        $('label[name=userId]').html('아이디를 입력하세요');
+        // 커서 깜빡이기.
+        $('#userId').focus();
+        return false; //이벤트 취소
+    }
+
+
+    //이름 유형성 검사
+    var result2=$('#username').val(); // val속성 값 읽기
+    if (result2=='') {
+        //<laber name="username">이름을 입력하세요</laber>
+        $('label[name=username]').html('이름을 입력하세요');
+        // 커서 깜빡이기.
+        $('#username').focus();
+        return false; //이벤트 취소
+    }
+
+    //패스워드 와 패스워드 확인 이 같은지 검사.
+    var pwd = $('#pwd').val();
+    var pwdConfirm = $('pwdConfirm').val();
+
+    //pwd와 pwdConfrim이 같다면
+    if (pwd==pwdConfirm) {
+
+    } else {
+        //<laber name="pwd">패스워드를 바르게 입력하세요</laber>
+        $('label[name=pwd]').html('패스워드를 바르게 입력하세요');
+        // 커서 깜빡이기.
+        $('#userId').focus();
+        //둘의 값이 다를 경우 입력값 지우기
+        $('#pwd').val('');
+        $('#pwdConfirm').val('');
+        return false; //이벤트 취소
+    }
+
+    //form태그 찾고 submit 실행하기
+    //<form name='fm'>
+    $('form[name=fm]').submit();
+
+});
+
+</script>
+

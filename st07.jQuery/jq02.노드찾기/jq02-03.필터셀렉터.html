@@ -63,4 +63,30 @@
 </html>
 
 <!-- 임포트 -->
-
+
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+
+    $('#checked').on('click' , function(){
+
+        $('input[type="checkbox"]:checked').css('outline','1px dotted red');
+    })
+
+    $('#radio').on('click' , function(){
+
+    $('input[type="radio"]:checked').css('outline','1px dotted red');
+    })
+
+    $('#selected').on('click' , function(){
+
+    $('option:selected').css('outline','1px dotted red');
+    })
+
+    $('#hobby').on('click' , function(){
+
+    $('input[name="hobby"][type="checkbox"]:checked').css('outline','1px dotted red');
+    })
+        
+</script>
+

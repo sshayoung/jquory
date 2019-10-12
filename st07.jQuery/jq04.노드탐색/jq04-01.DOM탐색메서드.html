@@ -59,4 +59,66 @@
 </html>
 
 <!-- 임포트 -->
-
+
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+
+    $('.parents').on('click', function(event){
+        // 조상
+        $('#center').parents().css('border' , '1px dotted black');
+    });
+
+    $('.parent').on('click', function(event){
+        //부모
+        $('#center').parent().css('border' , '1px dotted black');
+    });
+
+    $('.prevAll').on('click', function(event){
+        //윗형들
+        $('#center').prevAll().css('border' , '1px dotted black');
+    });
+
+    $('.first').on('click', function(event){
+        // first를 찾으려면 부모를 이용하여 찾아야 한다.
+        // 고아라고 가정하면 이해하기 쉽다
+        // 첫째형 태그 {border: 1px dotted black;}
+        $('#center').parent().children().first().css('border' , '1px dotted black');
+    });
+
+    $('.prev').on('click', function(event){
+        //막내형
+        $('#center').prev().css('border' , '1px dotted black');
+    });
+
+    $('.nextAll').on('click', function(event){
+        //아래동생들
+        $('#center').nextAll().css('border' , '1px dotted black');
+    });
+
+    $('.next').on('click', function(event){
+        //첫째동생
+        $('#center').next().css('border' , '1px dotted black');
+    });
+
+    $('.last').on('click', function(event){
+        //막내동생
+        $('#center').parent().children().last().css('border' , '1px dotted black');
+    });
+
+    $('.siblings').on('click', function(event){
+        //나빼고 모두  
+        $('#center').siblings().css('border' , '1px dotted black');
+    });
+
+    $('.children').on('click', function(event){
+        //자식들
+        $('#center').children().css('border' , '1px dotted black');
+    });
+
+    $('.children').on('click', function(event){
+        //셋째 자식
+        $('#center').children('div#third').css('border' , '1px dotted black');
+    });
+
+</script>

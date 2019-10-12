@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>객체 생성</title>
-    
+    <script>
+        //변수와 함수 선언
+        var name = 'foo';
+        var age = 30;
+        var run = function(){
+            console.log('run');
+        }
+
+
+        //위의 변수와 함수를 객체에서 선언하면 다음과 같다.
+        //변수-->프로퍼티
+        //함수-->메서드
+        var person = {
+            name : 'foo',   // name = 'foo';
+            age : 30,   // age = 30;
+            run : function(){
+                console.log('run');
+            }
+        }
+
+        //person의 네임을 출력하시오.
+        console.log(person.name);
+        console.log(person['name']); //객체는 방 이름이 있는 배열이다. 
+    </script>
 </head>
 <body>
 
 </body>
-</html>
+</html>
