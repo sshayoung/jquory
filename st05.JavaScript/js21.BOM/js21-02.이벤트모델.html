@@ -3,7 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    
+    <script>
+        window.onload = function(event) {
+
+            // <input id="btn" type="button" value='고전 이벤트 모델'> 찾으시오.
+            var btn = document.getElementById('btn');
+            btn.onclick = function(event) {
+                //alert 버튼이 클릭되었습니다.
+                window.alert('고전 이벤트 버튼이 클릭되었습니다.')
+            };
+
+            //<p name='name'>고전 이벤트 모델</p> 찾으시오.
+            var p = document.getElementsByTagName('p'); //=>여러개니까 배열이다.
+            p[0].onclick = function(event){
+                //alert 버튼이 클릭되었습니다.
+                window.alert('0번 태그가 클릭되었습니다.');
+            }
+
+            var p = document.getElementsByTagName('p'); //=>여러개니까 배열이다.
+            p[1].onclick = function(event){
+                //alert 버튼이 클릭되었습니다.
+                window.alert('1번 태그가 클릭되었습니다.');
+            }
+
+            //<input class='btn2' type="button" value='표준 이벤트 모델'> 찾으시오.
+            var btn2 = document.getElementsByClassName('btn2'); //=>s가 붙었으니까 얘도 배열이다.
+            btn2[0].onclick= function(event){
+                //alert 버튼이 클릭되었습니다.
+                window.alert('btn2 클래스가 클릭되었습니다.');
+            }
+
+
+
+        };
+    </script>
 </head>
 <body>
     <input type="button" value='인라인 이벤트 모델' onclick="btn_onclick()">

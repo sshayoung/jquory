@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>산술 연산</title>
-    
+    <script>
+        x = prompt('숫자 입력'); // 숫자 입력받기
+        x = Number(x); //문자를 숫자로 변환
+        console.log(x);
+
+        y = prompt('숫자 입력');
+        y = Number(y);
+        console.log(y);
+
+        var add=function(x,y) {
+            return x+y;
+        };
+        var r = add(x,y);
+        console.log(r);
+
+        var sub=function(x,y) {
+            return x-y;
+        };
+        var r2 = sub(x,y)
+        console.log(r2);
+
+        var mul=function(x,y) {
+            return x * y;
+        };
+        var r3 = mul(x,y)
+        console.log(r3);
+
+        var div=function(x,y) {
+            return x / y;
+        };
+        var r4 = div(x,y)
+        console.log(r4);
+
+
+    </script>
 </head>
 <body>
 
 </body>
-</html>
+</html>
