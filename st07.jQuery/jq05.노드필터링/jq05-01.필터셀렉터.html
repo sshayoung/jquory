@@ -51,4 +51,75 @@
 </html>
 
 <!-- 임포트 -->
-
+
+<script src="../jquery-3.4.1.js"></script>
+
+
+<script>
+
+    $('#eq').on('click',function(event){
+        $('td'); //==>td 40개를 찾겠다
+        //==> 찾은 40개 중에서 7번째를 찾는다.
+        $('td:eq(7)').css('background-color','#ff0000'); 
+    });
+    $('#gt').on('click',function(event){
+        //$('td:gt(2)').css('background-color','yellow')
+        $('tr:eq(1) > td:gt(2)').css('background-color','yellow');
+
+    });
+    $('#lt').on('click',function(event){
+        
+         $('tr:eq(1) > td:lt(2)').css('background-color','yellow');
+    });
+    $('#odd').on('click',function(event){
+        $('tr:eq(2)> td:odd').css('background-color','blue');
+        
+    });
+    $('#even').on('click',function(event){
+
+        //세번째 tr을 찾고
+        //찾은 tr중에서 짝수를 찾는다.
+        $('tr:eq(2)> td:even').css('background-color','green');
+    });
+    $('#first').on('click',function(event){
+        
+        $('tr:eq(3)> td:first').css('background-color','pink');
+    });
+    $('#last').on('click',function(event){
+
+        $('  tr:eq(3)> td:last   ').css('background-color','pink');
+    });
+    $('#ex1').on('click',function(event){
+        $('tr:even').css('background-color','red');
+    });
+    $('#ex2').on('click',function(event){
+        $('td:odd').css('background-color','green');
+    });
+    $('#ex3').on('click',function(event){
+        $('tr:even > td:odd').css('background-color','pink');
+    });
+    $('#ex4').on('click',function(event){
+        $('tr > td:nth-child(3n+1)').css('background-color','pink');
+    });
+    $('#ex5').on('click',function(event){
+        $('tr > td:first-child').css('background-color','red');
+    });
+    $('#ex6').on('click',function(event){
+        $('tr > td:last-child').css('background-color','green');
+    });
+    $('#ex7').on('click',function(event){
+        $('tr > td:nth-child(3)').css('background-color','yellow');
+    });
+    $('#ex8').on('click',function(event){
+        $('tr:eq(2) > td:eq(4)').css('background-color','yellow');
+        // <td>#25</td>를 찾고 <td colspan='t'>#25</td>을 추가한다.
+        $('tr:eq(2) > td:eq(4)').attr('colspan', '6');
+        // <td>#26</td> <td>#27</td> <td>#28</td> <td>#29</td> <td>#30</td> 을 지운다.
+        $('tr:eq(2) > td:gt(4)').remove();
+    });
+
+
+
+
+
+</script>

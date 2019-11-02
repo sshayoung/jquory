@@ -9,7 +9,11 @@
 	    th,td{ padding: 5px; font-size: small; }
 	    .odd{ background: rgba(51, 69, 205, 0.27); }
 	    .even{ background:#F2F2F2; }
-	    .hover{ background:#B2D8FF; }
+        .hover{ background:#B2D8FF; }
+        
+        /* <tbody>밑에있는 자식<tr>을 찾으시오. */
+        /* 마우스를 올리면 */
+        /* tbody>tr:hover { background:#B2D8FF; } */
 	</style>
 </head>
 <body>
@@ -52,4 +56,49 @@
 </html>
 
 <!-- 임포트 -->
-
+<!-- this = 현재 실행되고 있는 tr을 자바스크립트 언어로 this라고 부른다. -->
+
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+    // 짝수 tr 이면 설정. <tr> ===> <tr class='even'>
+    $('tbody > tr:even').addClass('even');
+
+    // 홀수 tr 이면 설정. <tr> ===> <tr class='odd''>
+    $('tbody > tr:even').addClass('odd');
+    // tbody>tr:hover { background:#B2D8FF; } */
+    // hover --> mouseover,mouseout */
+    $('tbody>tr').on('mouseover', function(event){
+        //설정
+        //클래스 속성 추가 'hover'
+        $(this).addClass('hover');
+    })
+    $('tbody>tr').on('mouseout', function(event){
+        //설정
+        //'hover'를 지워라.
+        $(this).removeClass('hover');
+    })
+
+    //수직 스트라이프
+    $('tbody>tr>td').on('mouseover', function(event){
+        //수직 스트라이프 설정
+        //현재 마우스가 있는 컬럼의 인덱스(번호) 가져오기
+
+        var colindex = $(this).index()+1; //왜냐면 시작이 0부터이기 때문에.
+        var str = 'td:nth-child('+colindex+')';
+        console.log(str); // ==>td:nth=child(1), ... , td:nth=child(5)
+        $(str).addClass('hover');
+
+        //$('td:nth=child(+ +)').addClass('hover');
+    })
+    $('tbody>tr>td').on('mouseout', function(event){
+
+        var colindex = $(this).index()+1; //왜냐면 시작이 0부터이기 때문에.
+        var str = 'td:nth-child('+colindex+')';
+        console.log(str); // ==>td:nth=child(1), ... , td:nth=child(5)
+        $(str).removeClass('hover');
+        
+})
+
+</script>
+

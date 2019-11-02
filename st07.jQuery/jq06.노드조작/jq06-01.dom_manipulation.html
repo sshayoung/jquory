@@ -35,7 +35,8 @@
             <div id="header">
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
-                <div id="center">center
+                <div id="center">
+                    center
                     <p class="box one"  >jQuery</p>
                     <p class="box two"  >Mobile</p>
                     <p class="box three">Story</p>
@@ -47,4 +48,59 @@
     </div>
 </body>
 </html>
-
+
+<script src="../jquery-3.4.1.js"></script>
+
+<script>
+
+    //시간 가져오는 함수 만들기.
+    val gettime = function(){}
+        var result= '';
+        return result='';
+    
+
+    //자바스크립트에서 날짜,시간을 위한 객체는 Date.
+    var date = new Date();
+    var result = date.toLocaleDateString() + '' + date.toLocaletimeString();
+   
+
+    $('.html'   ).on('click', function(event){
+        $('#center').html('<div style="border: 1px solid blue;">결혼은 늦게......</div>');
+     });
+
+    //자식으로 추가하는 법//
+    $('.prepend').on('click', function(event){
+        var time = gettime();
+        //첫번째 자식(중요)으로 추가. <p>prepend</p>
+        var str = '<p> prepend' + time + '</p>';
+        $('#center').prepend(str);
+     });
+
+    $('.append' ).on('click', function(event){
+        //var time = gettime();
+        //var str = '<p> append' + time + '</p>';
+        //$('#center').before(str);
+        var str = 'append' + time;
+        $('#center').append('<p/>')
+                    .find('p')
+                    .html(str)
+                    .css('border', '2px dashed green');
+
+        //마지막 자식(중요)으로 추가. <p>prepend</p>
+        $('#center').append('<p>append</p>');
+     });
+
+    //형제로 추가하는 법//
+    $('.before' ).on('click', function(event){
+        //형으로 추가
+        $('#center').before('<p>append</p>');
+     });
+
+    $('.after'  ).on('click', function(event){
+        //동생으로 추가
+        $('#center').after('<p>after</p>');
+     });
+    
+
+
+</script>

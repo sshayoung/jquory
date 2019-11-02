@@ -6,12 +6,32 @@
     <style>
         img{  width: 140px; height: 120px; }
     </style>
-    <!-- 임포트 -->
-    
+    <!-- 임포트 --> 
     
 </head>
 <body>
    <img src="images/im1.jpg" />
 </body>
 </html>
-
+
+<script src="../jquery-3.4.1.js"></script>
+<script>
+    //<img src="images/im1.jpg" />에 클릭 이벤트 설정.
+    $('img').on('click', function(event){
+        //클릭된 이미지(===this)의 너비와 높이 찾기.
+        var imgwidth = $(this).width(); //컨텐츠의 너비를 읽다.(컨텐츠만. padding,boder,margin 제외.)
+        var imgheight = $(this).height(); //컨텐츠의 높이를 읽다.(컨텐츠만. padding,boder,margin 제외.)
+        
+        //이미지를 2배로 하겠다.
+        imgwidth = imgwidth*2;
+        imgheight = imgheight*2;
+
+        //이미지의 바뀐 크기를 설정(쓰기).
+        $(this).width(imgwidth);
+        $(this).height(imgwidth);
+
+    })
+
+
+</script>
+
